@@ -1,10 +1,11 @@
 # Simple(x) Global Optimization
 ## Quick rundown:
-Simple is a radically more scalable alternative to Bayesian Optimization.  Like Bayesian Optimization, it is highly sample-efficient, converging to the global optimum in as few samples as possible.  Unlike Bayesian Optimization, it has a runtime performance of ```O(log(n))``` instead of ```O(n^3)``` (or ```O(n^2)``` with approximations), as well as a constant factor that is roughly three orders of magnitude smaller.  Simple's runtime performance, combined with its superior sample efficiency in high dimensions, allows the algorithm to easily scale to problems featuring large numbers of design variables.  
+Simple is a radically more scalable alternative to Bayesian Optimization.  Like Bayesian Optimization, it is highly sample-efficient, converging to the global optimum in as few samples as possible.  Unlike Bayesian Optimization, it has a runtime performance of ```O(log(n))``` instead of ```O(n^3)```, as well as a constant factor that is roughly three orders of magnitude smaller.  Simple's runtime performance, combined with its superior sample efficiency in high dimensions, allows the algorithm to easily scale to problems featuring large numbers of design variables.  
 
 For typical optimization workloads, the CPU time consumed by Bayesian Optimization is measured in minutes, while the CPU time used by Simple is measured in *milliseconds*.  See for yourself:
 
 ![Simple vs Bayesian Optimization](https://github.com/chrisstroemel/Simple/blob/master/comparison.gif?raw=true)
+([Also you can find a comparison with CMA-ES here](https://github.com/chrisstroemel/Simple/blob/master/cma-comparison.gif?raw=true).)
 
 ## How does it work?
 Like Bayesian Optimization, Simple operates by constructing an internal surrogate model of the objective function's behavior.  Both algorithms sample from points that their surrogate models predict to have a high objective value, as well as a large amount of information gain in order to make more accurate predictions in future iterations.  Bayesian Optimization uses Gaussian processes to model the objective function, which, while they are very statistically rigorous, are also very computationally expensive.
