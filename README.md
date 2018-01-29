@@ -1,6 +1,6 @@
 # Simple(x) Global Optimization
 ## Quick rundown:
-Simple is a radically more scalable alternative to Bayesian Optimization.  Like Bayesian Optimization, it is highly sample-efficient, converging to the global optimum in as few samples as possible.  Unlike Bayesian Optimization, it has a runtime performance of ```O(log(n))``` instead of ```O(n^3)```, as well as a constant factor that is roughly three orders of magnitude smaller.  Simple's runtime performance, combined with its superior sample efficiency in high dimensions, allows the algorithm to easily scale to problems featuring large numbers of design variables.  
+Simple is a radically more scalable alternative to Bayesian Optimization.  Like Bayesian Optimization, it is highly sample-efficient, converging to the global optimum in as few samples as possible.  Unlike Bayesian Optimization, it has a runtime performance of ```O(log(n))``` instead of ```O(n^3)``` (or ```O(n^2)``` with approximations), as well as a constant factor that is roughly three orders of magnitude smaller.  Simple's runtime performance, combined with its superior sample efficiency in high dimensions, allows the algorithm to easily scale to problems featuring large numbers of design variables.  
 
 For typical optimization workloads, the CPU time consumed by Bayesian Optimization is measured in minutes, while the CPU time used by Simple is measured in *milliseconds*.  See for yourself:
 
